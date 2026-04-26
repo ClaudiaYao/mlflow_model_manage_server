@@ -31,4 +31,5 @@ services:
       --serve-artifacts
       --host 0.0.0.0
       --port 5000
+      --allowed-hosts localhost:5000,host.docker.internal:5000,127.0.0.1:5000
 
