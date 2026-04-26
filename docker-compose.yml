@@ -33,3 +33,13 @@ services:
       --port 5000
       --allowed-hosts localhost:5000,host.docker.internal:5000,127.0.0.1:5000
 
+  nginx:
+    image: nginx:latest
+    container_name: mlflow-nginx
+    restart: always
+    depends_on:
+      - mlflow
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
